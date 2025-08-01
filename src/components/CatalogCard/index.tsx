@@ -11,7 +11,7 @@ export default function CatalogCard({ product }: Props) {
 
     return (
 
-        <Link to={'/product-details/${product.id}'}>
+        <Link to={`/product-details/${product.id}`}>
             <div className="dsc-card">
                 <div className="dsc-catalog-card-top dsc-line-bottom">
                     <img src={product.imgUrl} alt={product.name} />
