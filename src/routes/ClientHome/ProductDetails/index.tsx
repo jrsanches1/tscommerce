@@ -3,16 +3,19 @@ import './styles.css';
 import ButtonInverse from "../../../components/ButtonInverse";
 import ButtonPrimary from "../../../components/ButtonPrimary";
 import ProductDetailsCard from "../../../components/ProductDetailsCard";
-import { useParams } from 'react-router-dom';
+import * as productService from "../../../services/product-service";
+import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { ProductDTO } from '../../../models/product';
-import * as productService from "../../../services/product-service";
+
 
 
 export default function ProductDetails() {
 
     const params = useParams();
+
+    const navigate = useNavigate();
 
     const [product, setProduct] = useState<ProductDTO>();
 
@@ -20,6 +23,9 @@ export default function ProductDetails() {
         productService.findById(Number(params.productId))
             .then(response => {
                 setProduct(response.data);
+            })
+            .catch(() => {
+                navigate("/");
             });
     }, []);
 
