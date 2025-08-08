@@ -16,4 +16,3 @@ export type ProductDTO = {
 
 
 
-//DTO = data transfer object
