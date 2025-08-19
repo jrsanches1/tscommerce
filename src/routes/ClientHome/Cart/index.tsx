@@ -13,7 +13,7 @@ const item2 : OrderItemDTO = new OrderItemDTO(
 
 export default function Cart() {
 
-     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
      const [cart, setCart] = useState<OrderDTO>(cartService.getCart());
    
 
